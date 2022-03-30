@@ -1,9 +1,12 @@
 import express from 'express';
 import cors from 'cors';
+
 import posts from './routers/posts.js';
 import users from './routers/users.js';
 import cars from './routers/cars.js';
 import contracts from './routers/contracts.js';
+import detailscontracts from './routers/detailscontracts.js';
+
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 
@@ -22,6 +25,7 @@ app.use('/posts', posts);
 app.use('/users', users);
 app.use('/cars', cars);
 app.use('/contracts', contracts);
+app.use('/detailscontracts', detailscontracts);
 
 mongoose
   .connect(URI, { useNewUrlParser: true, useUnifiedTopology: true })
