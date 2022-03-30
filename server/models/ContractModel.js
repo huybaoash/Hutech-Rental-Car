@@ -1,0 +1,19 @@
+import mongoose from 'mongoose';
+
+const schema = new mongoose.Schema(
+  {
+    userid: {
+      type: String,
+      required: true,
+    },
+    totalprice: {
+      type: String,
+      required: true,
+    },
+    
+
+  },
+  { timestamps: true }
+);
+
+export const ContractModel = mongoose.model('Contracts', schema);

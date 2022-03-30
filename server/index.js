@@ -3,6 +3,7 @@ import cors from 'cors';
 import posts from './routers/posts.js';
 import users from './routers/users.js';
 import cars from './routers/cars.js';
+import contracts from './routers/contracts.js';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 
@@ -20,6 +21,7 @@ app.use(express.urlencoded({ extended: true, limit: '100mb' }));
 app.use('/posts', posts);
 app.use('/users', users);
 app.use('/cars', cars);
+app.use('/contracts', contracts);
 
 mongoose
   .connect(URI, { useNewUrlParser: true, useUnifiedTopology: true })
