@@ -67,6 +67,7 @@ POST : http://localhost:5000/contracts
 body : 
 
 {
+    
     "userid": "6242f4e1172804056c138685",
 
     "totalprice": 70000000,
@@ -103,6 +104,7 @@ POST : http://localhost:5000/contracts/update
 body : 
 
 {
+
     "_id": "62444a6a84e2af2324946987",
     
     "userid": "6242f4e1172804056c138685",
@@ -116,6 +118,7 @@ body :
 kết quả trả về sau khi thành công sửa dữ liệu:
 
 {
+
     "status": "Done",
 
     "_id": "62444a6a84e2af2324946987",
@@ -138,6 +141,7 @@ POST : http://localhost:5000/contracts/remove
 body : 
 
 {
+
     "_id": "62444b9484e2af2324946990"
 
 }
@@ -145,6 +149,7 @@ body :
 kết quả trả về sau khi thành công xóa dữ liệu:
 
 {
+
     "status": "Waiting...e",
     "_id": "62444b9484e2af2324946990",
     "userid": "6242f4e1172804056c138685",
