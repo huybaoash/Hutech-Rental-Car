@@ -42,7 +42,7 @@ const schema = new mongoose.Schema(
         tenquyen:{
             type: String,
            
-            default: 'User',
+            default: 'Người dùng',
         }
     }
 

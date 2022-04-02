@@ -26,7 +26,7 @@ export const updateUser = async (req, res) => {
   try {
     const updateUser = req.body;
 
-    const user = await UserModel.findOneAndUpdate(
+    const user = await UserModel.find(
       { _id: updateUser._id },
       updateUser,
       { new: true }
@@ -50,6 +50,30 @@ export const removeUser = async (req, res) => {
     );
     console.log('[user]',user);
     res.status(200).json(user);
+  } catch (err) {
+    res.status(500).json({ error: err });
+  }
+};
+
+export const checkloginUser = async (req, res) => {
+  try {
+    const user_login = req.body;
+   
+    const user = await UserModel.findOne(
+      { username: user_login.username }
+      
+    );
+    console.log('[user]pass:',user.password);
+    console.log('[userlogin]pass:',user_login.password);
+ 
+    if (!user.password.localeCompare(user_login.password)){
+      console.log('[user]',user);
+      res.status(200).json(user);
+    }
+    else{
+      res.status(500).json({ error: err });
+    }
+    
   } catch (err) {
     res.status(500).json({ error: err });
   }
