@@ -1,12 +1,14 @@
 import React from 'react';
 import {
   Avatar,
+  Button,
   Card,
   CardActions,
   CardContent,
   CardHeader,
   CardMedia,
   IconButton,
+  Link,
   Typography,
 } from '@material-ui/core';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
@@ -48,9 +50,9 @@ export default function Car({ car }) {
         </Typography>
         <Typography variant='h5' color='textPrimary'>
           {car.cartype}
-        </Typography>
-        
+        </Typography>       
       </CardContent>
+      <a className='btn btn-primary' href={'http://localhost:3000/chi-tiet-xe?&id=' + car._id}>Thuê Xe</a>
     </Card>
   );
 }
