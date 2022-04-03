@@ -52,7 +52,7 @@ export default function Car({ car }) {
           {car.cartype}
         </Typography>       
       </CardContent>
-      <a className='btn btn-primary' href={'http://localhost:3000/chi-tiet-xe?&id=' + car._id}>Thuê Xe</a>
+      <a className='btn btn-primary' href={'http://localhost:3000/thue-xe?&id=' + car._id + '&carname=' + car.carname + '&pricerent=' + car.pricerent}>Thuê Xe</a>
     </Card>
   );
 }

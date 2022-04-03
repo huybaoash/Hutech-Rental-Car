@@ -31,6 +31,18 @@ export default makeStyles((theme) => ({
     fontSize: '1rem',
   },
 
+  'input_hide':{
+    borderRadius: '8px',
+    border: '2px solid #dddfe2',
+    outline: 'none',
+    color: '#1d2129',
+    margin: '0.5rem 0',
+    padding: '0.5rem 0.75rem',
+    width: '92%',
+    fontSize: '1rem',
+    display:'none',
+  },
+
   'button':{
     background: '#1877f2',
     border: '1px solid #1877f2',

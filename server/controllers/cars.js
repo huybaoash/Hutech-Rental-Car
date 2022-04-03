@@ -9,6 +9,17 @@ export const getCars = async (req, res) => {
   }
 };
 
+export const getCar = async (req, res) => {
+  try {
+    const getCar = req.body; // dữ liệu xe cần tìm
+    console.log('[getCar]',getCar);
+    const car = await CarModel.findOne( { _id: getCar._id }); // chờ tới khi tìm được car.
+    res.status(200).json(car); // nếu kết quả tìm dc thành công thì trả về trạng thái 200 cùng tập tin danh sách car
+  } catch (err) { // nếu có lỗi sự cố gì thì catch lại và xuất thông tin lỗi vào kết quả trả về.
+    res.status(500).json({ error: err });
+  }
+};
+
 export const createCar = async (req, res) => {
   try {
     const newcar = req.body; // phần body của 1 request là dạng { "xe": "Honda" }, cũng có nghĩa đây là dữ liệu của xe mới.

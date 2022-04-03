@@ -85,7 +85,7 @@ export default function LoginPage() {
       
       
       <div className={classes.login}>
-      <h1>Login</h1>
+      <h1>Đăng nhập</h1>
       <input
         className={classes.input}
         type="text"
@@ -104,10 +104,6 @@ export default function LoginPage() {
       ></input>
       <div className={classes.button} onClick={login}>
         Đăng nhập
-      </div>
-      <div>or</div>
-      <div className={classes.button} onClick={() => navigate.push("/register")}>
-        Đăng ký
       </div>
     </div>
       
