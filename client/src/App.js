@@ -4,6 +4,7 @@ import LoginPage from './pages/LoginPage';
 import { Link } from '@material-ui/core';
 import { Routes,Router, Route,Navigate } from "react-router-dom";
 import RentCarPage from './pages/RentCarPage';
+import RegisterPage from './pages/RegisterPage';
 
  function App() {
     return (
@@ -12,7 +13,9 @@ import RentCarPage from './pages/RentCarPage';
 
           <Route path="danh-sach-xe" element={<CarListPage/>} />
 
-          <Route path="danh-nhap" element={<LoginPage/>} />
+          <Route path="dang-nhap" element={<LoginPage/>} />
+
+          <Route path="dang-ky" element={<RegisterPage/>} />
 
           <Route path="thue-xe" >
             <Route path="?id" element={<RentCarPage/>} />

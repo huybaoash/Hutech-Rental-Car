@@ -62,8 +62,8 @@ export default function Header() {
     </ul>
 
     <ul class="nav navbar-nav navbar-right">
-	      <li><a href="http://localhost:3000/danh-nhap"><span class="glyphicon glyphicon-user"></span> Đăng nhập</a></li>
-	      <li><a href=""><span class="glyphicon glyphicon-log-in"></span> Đăng ký</a></li>
+	      <li><a href="http://localhost:3000/dang-nhap"><span class="glyphicon glyphicon-user"></span> Đăng nhập</a></li>
+	      <li><a href="http://localhost:3000/dang-ky"><span class="glyphicon glyphicon-log-in"></span> Đăng ký</a></li>
 	    </ul>
     </div>
     

@@ -10,8 +10,8 @@ import CarList from '../components/CarList';
 import useStyles from './styles';
 import { Button, Input, Modal, TextareaAutosize, TextField } from '@material-ui/core';
 import FileBase64 from 'react-file-base64';
-import { modalState$ } from '../../redux/selectors';
-import { createUser, hideModal_User } from '../../redux/actions';
+import { modalState$ } from '../redux/selectors';
+import { createUser, hideModal_User } from '../redux/actions';
 
 export default function RegisterPage() {
 
@@ -44,11 +44,13 @@ const onClose = React.useCallback(() => {
 
 const onSubmit = React.useCallback(() => {
   dispatch(createUser.createUserRequest(data));
-  onClose();
-}, [data, dispatch, onClose]);
+  alert("Đăng ký thành công !");
+      window.location.replace("http://localhost:3000/dang-nhap/");
+}, [data, dispatch]);
 
   return (
     <Container maxWidth='lg'>
+    <Header />
      <div className={classes.paper} id='simple-modal-username'>
       <h2>Create User</h2>
       <form noValidate autoComplete='off' className={classes.form}>
