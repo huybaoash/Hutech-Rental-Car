@@ -1,5 +1,5 @@
 import express from 'express';  // cài thư viện này để hỗ trợ routing cho Server
-import { getCars, createCar, updateCar,removeCar } from '../controllers/cars.js'; 
+import { getCars, createCar, updateCar,removeCar,getCar } from '../controllers/cars.js'; 
 // Lấy các hàm xử lý dữ liệu của cars từ thư mục controllers
 
 const router = express.Router();
@@ -7,6 +7,8 @@ const router = express.Router();
 
 
 router.get('/', getCars); // http://localhost:5000/cars phương thức GET là sử dụng hàm getCars để lấy danh sách Car
+
+router.post('/get', getCar); // http://localhost:5000/cars/get phương thức POST là sử dụng hàm getCar để lấy Car cần tìm
 
 router.post('/', createCar);// http://localhost:5000/cars phương thức POST là sử dụng hàm createCar để tạo Car
 

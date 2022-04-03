@@ -1,45 +1,57 @@
+import React from 'react';
+import { Container, Fab } from '@material-ui/core';
+import AddIcon from '@material-ui/icons/Add';
+import { useSelector, useDispatch } from 'react-redux';
+
+import Header from '../components/Header';
+import PostList from '../components/PostList';
+import UserList from '../components/UserList';
+import CarList from '../components/CarList';
+import useStyles from './styles';
 import { Button, Input, Modal, TextareaAutosize, TextField } from '@material-ui/core';
 import FileBase64 from 'react-file-base64';
-import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { modalState$ } from '../../redux/selectors';
-import useStyles from './styles';
-import { createUser, hideModal_User } from '../../redux/actions';
+import { modalState$ } from '../redux/selectors';
+import { createUser, hideModal_User } from '../redux/actions';
 
-export default function CreateUsersModal() {
+export default function RegisterPage() {
+
+
   const [data, setData] = React.useState({
-      username: '',
-      password: '',
-      firstname: '',
-      lastname: '',
-      identify: '',
-      email: '',
-      phonenumber:'',
+    username: '',
+    password: '',
+    firstname: '',
+    lastname: '',
+    identify: '',
+    email: '',
+    phonenumber:'',
+});
+const dispatch = useDispatch();
+const { isShow } = useSelector(modalState$);
+const classes = useStyles();
+
+const onClose = React.useCallback(() => {
+  dispatch(hideModal_User());
+  setData({
+    username: '',
+    password: '',
+    firstname: '',
+    lastname: '',
+    identify: '',
+    email: '',
+    phonenumber:'',
   });
-  const dispatch = useDispatch();
-  const { isShow } = useSelector(modalState$);
-  const classes = useStyles();
+}, [dispatch]);
 
-  const onClose = React.useCallback(() => {
-    dispatch(hideModal_User());
-    setData({
-      username: '',
-      password: '',
-      firstname: '',
-      lastname: '',
-      identify: '',
-      email: '',
-      phonenumber:'',
-    });
-  }, [dispatch]);
+const onSubmit = React.useCallback(() => {
+  dispatch(createUser.createUserRequest(data));
+  alert("Đăng ký thành công !");
+      window.location.replace("http://localhost:3000/dang-nhap/");
+}, [data, dispatch]);
 
-  const onSubmit = React.useCallback(() => {
-    dispatch(createUser.createUserRequest(data));
-    onClose();
-  }, [data, dispatch, onClose]);
-
-  const body = (
-    <div className={classes.paper} id='simple-modal-username'>
+  return (
+    <Container maxWidth='lg'>
+    <Header />
+     <div className={classes.paper} id='simple-modal-username'>
       <h2>Create User</h2>
       <form noValidate autoComplete='off' className={classes.form}>
         <TextField
@@ -117,13 +129,8 @@ export default function CreateUsersModal() {
         </div>
       </form>
     </div>
-  );
 
-  return (
-    <div>
-      <Modal open={isShow} onClose={onClose}>
-        {body}
-      </Modal>
-    </div>
+
+    </Container>
   );
 }

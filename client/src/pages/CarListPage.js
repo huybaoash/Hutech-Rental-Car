@@ -13,7 +13,7 @@ import CreatePostModal from '../components/CreatePostModal';
 import CreateUsersModal from '../components/CreateUsersModal';
 import CreateCarModal from '../components/CreateCarModal';
 
-export default function HomePage() {
+export default function CarListPage() {
   const classes = useStyles();
   const dispatch = useDispatch();
 
@@ -32,15 +32,33 @@ export default function HomePage() {
   return (
     <Container maxWidth='lg'>
       <Header />
+      <CarList />
       
       
-      <h1>HomePage</h1>
-     
+      <CreateCarModal/>
   
-      
-      
-    </Container>
+      <Fab
+        color='primary'
+        className={classes.fab}
+        onClick={openCreatePostModal}
+      >
+        <AddIcon />
+      </Fab>
 
-    
+      <Fab
+        color='primary'
+        className={classes.fab}
+        onClick={openCreateUserModal}
+      >
+        <AddIcon />
+      </Fab>
+      <Fab
+        color='primary'
+        className={classes.fab}
+        onClick={openCreateCarModal}
+      >
+        <AddIcon />
+      </Fab>
+    </Container>
   );
 }

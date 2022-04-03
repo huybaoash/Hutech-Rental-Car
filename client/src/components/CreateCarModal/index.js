@@ -37,19 +37,19 @@ export default function CreateCarModal() {
 
   const body = (
     <div className={classes.paper} id='simple-modal-carname'>
-      <h2>Create New Car</h2>
+      <h2>Thêm xe mới</h2>
       <form noValidate autoComplete='off' className={classes.form}>
         <TextField
           className={classes.carname}
           required
-          label='Car Name'
+          label='Tên xe'
           value={data.carname}
           onChange={(e) => setData({ ...data, carname: e.target.value })}
         />
         <TextField
           className={classes.pricerent}
           required
-          label='Price Rent'
+          label='Giá xe'
           value={data.pricerent}
           type='number'
           onChange={(e) => setData({ ...data, pricerent: e.target.value })}
@@ -57,14 +57,14 @@ export default function CreateCarModal() {
         <TextField
           className={classes.cartype}
           required
-          label='Car Type'
+          label='Loại xe'
           value={data.cartype}
           onChange={(e) => setData({ ...data, cartype: e.target.value })}
         />
         <TextField
           className={classes.carcompany}
           required
-          label='Car Company'
+          label='Hãng xe'
           value={data.carcompany}
           onChange={(e) => setData({ ...data, carcompany: e.target.value })}
         />
@@ -83,7 +83,7 @@ export default function CreateCarModal() {
             fullWidth
             onClick={onSubmit}
           >
-            Create
+            Thêm
           </Button>
         </div>
       </form>
