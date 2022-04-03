@@ -5,6 +5,7 @@ import { Link } from '@material-ui/core';
 import { Routes,Router, Route,Navigate } from "react-router-dom";
 import RentCarPage from './pages/RentCarPage';
 import RegisterPage from './pages/RegisterPage';
+import UsersListPage from './pages/UsersListPage';
 
  function App() {
     return (
@@ -12,6 +13,8 @@ import RegisterPage from './pages/RegisterPage';
           <Route path="/" element={<HomePage/>}/>
 
           <Route path="danh-sach-xe" element={<CarListPage/>} />
+
+          <Route path="danh-sach-nguoi-dung" element={<UsersListPage/>} />
 
           <Route path="dang-nhap" element={<LoginPage/>} />
 

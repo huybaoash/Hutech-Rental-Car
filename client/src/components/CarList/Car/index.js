@@ -28,7 +28,7 @@ export default function Car({ car }) {
     <Card>
       <CardHeader
         avatar={<Avatar>{car.carname}</Avatar>}
-        title={car.carname}
+        title= <h4>{car.carname}</h4> 
         subheader={moment(car.updatedAt).format('HH:MM MMM DD,YYYY')}
         action={
           <IconButton>
@@ -43,7 +43,7 @@ export default function Car({ car }) {
       />
       <CardContent>
         <Typography variant='h5' color='textPrimary'>
-          {car.pricerent}
+          {car.pricerent} đ
         </Typography>
         <Typography variant='h5' color='textPrimary'>
           {car.carcompany}

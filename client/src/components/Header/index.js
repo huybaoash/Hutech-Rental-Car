@@ -56,7 +56,7 @@ export default function Header() {
 
       <ul class="nav navbar-nav">
        		<li><a href="http://localhost:3000/danh-sach-xe">Danh sách xe</a></li>
-       		<li><a href="">Dịch vụ</a></li>
+       		<li><a href="http://localhost:3000/danh-sach-nguoi-dung">Danh sách người dùng</a></li>
        		
        		
     </ul>
