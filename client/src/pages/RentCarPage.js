@@ -100,7 +100,7 @@ export default function RentCarPage() {
   const createContract = () => {
     var createContract_Success = -1;
     
-    
+    contract.totalprice = contract.dayrent * contract.pricerent;
       
     axios.post("http://localhost:5000/contracts/", contract)
     .then((res) => {
@@ -185,6 +185,7 @@ export default function RentCarPage() {
             type="number"
             name="DayRent"
             value={contract.dayrent}
+            min = '0'
             onChange={(e) => setContract({ ...contract, dayrent: e.target.value })}
             placeholder="Số ngày thuê"
           ></input>
