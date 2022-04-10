@@ -55,7 +55,7 @@ const onSubmit = React.useCallback(() => {
       <h2>Create User</h2>
       <form noValidate autoComplete='off' className={classes.form}>
         <TextField
-          className={classes.username}
+          className={classes.input}
           required
           label='Tên tài khoản'
           value={data.username}
@@ -63,7 +63,7 @@ const onSubmit = React.useCallback(() => {
         />
         
         <TextField
-          className={classes.firstname}
+          className={classes.input}
           required
           label='Họ'
           value={data.firstname}
@@ -71,7 +71,7 @@ const onSubmit = React.useCallback(() => {
         />
 
         <TextField
-          className={classes.lastname}
+          className={classes.input}
           required
           label='Tên'
   
@@ -80,7 +80,7 @@ const onSubmit = React.useCallback(() => {
         />
 
         <TextField
-          className={classes.identify}
+          className={classes.input}
           required
           label='CMND'
           value={data.identify}
@@ -89,7 +89,7 @@ const onSubmit = React.useCallback(() => {
         />
 
         <TextField
-          className={classes.email}
+          className={classes.input}
           required
           label='Email'
           value={data.email}
@@ -98,7 +98,7 @@ const onSubmit = React.useCallback(() => {
         />
 
         <TextField
-          className={classes.phonenumber}
+          className={classes.input}
           required
           label='Số điện thoại'
           value={data.phonenumber}
@@ -107,7 +107,7 @@ const onSubmit = React.useCallback(() => {
         />
 
         <TextField
-          className={classes.password}
+          className={classes.input}
           required
           label='Mật khẩu'
           value={data.password}
