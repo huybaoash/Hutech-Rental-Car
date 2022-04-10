@@ -1,5 +1,4 @@
-import mongoose from 'mongoose'; // cài thư viện mongoose cho model này để tương tác dữ liệu với database thông qua Schema
-
+import mongoose from 'mongoose'; 
 const schema = new mongoose.Schema(
   {
     carname: {
@@ -29,9 +28,7 @@ const schema = new mongoose.Schema(
     
 
   },
-  { timestamps: true } // khai báo cái này đồng nghĩ việc thêm 2 thuộc tính: CreateAt và UpdateAt.
+  { timestamps: true } 
 );
 
 export const CarModel = mongoose.model('Cars', schema);
-// Khai báo dòng này mới có thể mang model ra ngoài để sử dụng.
-// Đồng thời, khi tương tác dữ liệu sẽ được lưu vào table Cars trên database.

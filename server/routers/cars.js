@@ -1,20 +1,15 @@
-import express from 'express';  // cài thư viện này để hỗ trợ routing cho Server
+import express from 'express';  
 import { getCars, createCar, updateCar,removeCar,getCar } from '../controllers/cars.js'; 
-// Lấy các hàm xử lý dữ liệu của cars từ thư mục controllers
+
 
 const router = express.Router();
-//http://localhost:5000/cars 
 
 
-router.get('/', getCars); // http://localhost:5000/cars phương thức GET là sử dụng hàm getCars để lấy danh sách Car
 
-router.post('/get', getCar); // http://localhost:5000/cars/get phương thức POST là sử dụng hàm getCar để lấy Car cần tìm
+router.get('/', getCars); 
 
-router.post('/', createCar);// http://localhost:5000/cars phương thức POST là sử dụng hàm createCar để tạo Car
-
-router.post('/update', updateCar); // http://localhost:5000/cars/update phương thức POST là sử dụng hàm updateCar để cập nhật Car
-
-router.post('/remove', removeCar); // http://localhost:5000/cars/remove phương thức POST là sử dụng hàm removeCar để xóa Car
-
+router.post('/get', getCar); 
+router.post('/', createCar);
+router.post('/update', updateCar); 
+router.post('/remove', removeCar); 
 export default router;
-// khai báo cái này để bên index.js ở ngoài gọi để sử dụng dc 
